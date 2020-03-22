@@ -1,0 +1,16 @@
+[
+{
+  "modid": "blockupdatedisabler",
+  "name": "Block Update Disabler",
+  "description": "Disable block update to help with strange building.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["ExampleDude"],
+  "credits": "The Forge and FML guys, for making this example",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
