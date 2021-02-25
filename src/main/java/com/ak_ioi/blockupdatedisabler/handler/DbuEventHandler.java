@@ -1,18 +1,11 @@
 package com.ak_ioi.blockupdatedisabler.handler;
 
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.entity.AbstractClientPlayer;
-import net.minecraft.command.ICommand;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.server.MinecraftServer;
-import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.TextComponentString;
-import net.minecraftforge.event.CommandEvent;
-import net.minecraftforge.event.world.BlockEvent.FluidPlaceBlockEvent;
+import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.event.world.BlockEvent.NeighborNotifyEvent;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import com.ak_ioi.blockupdatedisabler.blocks.*;
+
 import net.minecraft.block.Block;
 
 public class DbuEventHandler {
@@ -26,4 +19,9 @@ public class DbuEventHandler {
 		if(flag && event.isCancelable())
 	    	event.setCanceled(true);
 	}
+	
+	@SubscribeEvent
+	public void registerBlocks(RegistryEvent.Register<Block> event) {
+        event.getRegistry().registerAll(new Sand(), new Gravel(), new Anvil(), new ConcretePowder());
+    }
 }
